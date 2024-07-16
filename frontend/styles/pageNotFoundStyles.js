@@ -13,6 +13,47 @@ const pageNotFoundStyles = {
       borderRadius: '22px',
     },
   },
+
+  logoGridProps: {
+    container: true,
+    item: true,
+    columnGap: 1,
+    width: 'auto',
+    justifyContent: 'center',
+    alignItems: 'center',
+    mb: 12,
+    sx: {
+      cursor: 'pointer',
+    },
+    px: { laptop: 2, desktop: 3, desktopMedium: 4 },
+  },
+  logoImageGridProps: {
+    container: true,
+    item: true,
+    mobileSmall: 'auto',
+    height: 'auto',
+  },
+  logoTitleGridProps: {
+    container: true,
+    item: true,
+    mobileSmall: true,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  logoTitleProps: {
+    fontFamily: 'Ethnocentric Regular',
+    fontSize: '36px',
+    color: 'black',
+  },
+  logoSubtitleProps: {
+    fontFamily: 'Satoshi Bold',
+    fontSize: '16px',
+    color: '#AD83FF',
+    textAlign: 'left',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+  },
   mainContentGridProps: {
     position: 'relative',
     container: true,
@@ -30,7 +71,6 @@ const pageNotFoundStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: 'auto',
-    rowGap: 2,
   },
   radialBg1Props: {
     position: 'absolute',
@@ -134,7 +174,7 @@ const pageNotFoundStyles = {
     fontSize: { laptop: '80px', desktop: '100px', desktopMedium: '140px' },
     fontFamily: 'Ethnocentric Regular Italics',
     sx: {
-      textShadow: '0px 4px 30px rgba(26, 214, 161, 0.24)',
+      // textShadow: '0px 4px 30px rgba(26, 214, 161, 0.24)',
       background: (theme) => theme.palette.primary.main,
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
@@ -174,20 +214,20 @@ const pageNotFoundStyles = {
   },
   star1Props: {
     position: 'absolute',
-    top: '25%',
-    left: '25%',
-    width: 36,
+    top: '20%',
+    left: '27%',
+    width: 16,
   },
   star2Props: {
     position: 'absolute',
     bottom: '10%',
-    left: '30%',
+    left: '20%',
     width: 36,
   },
   star3Props: {
     position: 'absolute',
-    top: 0,
-    right: '18%',
+    top: '35%',
+    right: '25%',
     width: 42,
   },
 };

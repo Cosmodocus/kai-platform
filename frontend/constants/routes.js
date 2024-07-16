@@ -9,6 +9,8 @@ const ROUTES = {
   REDIRECT: '/redirect',
   CHAT: '/chat',
   HISTORY: '/history',
+  APP_ERROR: '/app-error',
+  NETWORK_ERROR: '/network-error',
 };
 
 export default ROUTES;

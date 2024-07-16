@@ -1,16 +1,20 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Grid, useMediaQuery } from '@mui/material';
 import Head from 'next/head';
-
+import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import AppDisabled from '@/components/AppDisabled';
 import Loader from '@/components/Loader';
 
+import ROUTES from '@/constants/routes';
+
 import SideMenu from './SideMenu';
 import styles from './styles';
 
+import ApplicationErrorPage from '@/pages/app-error';
+import NetworkErrorPage from '@/pages/network-error';
 import { setLoading } from '@/redux/slices/authSlice';
 
 /**
@@ -25,6 +29,7 @@ import { setLoading } from '@/redux/slices/authSlice';
 const MainAppLayout = (props) => {
   const { children, extraContentProps, isToolPage } = props;
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
@@ -39,6 +44,16 @@ const MainAppLayout = (props) => {
     dispatch(setLoading(false));
   }, []);
 
+  // Check for network error and redirect to NetworkErrorPage
+  if (typeof window !== 'undefined' && !window.navigator.onLine) {
+    return <NetworkErrorPage />;
+  }
+
+  // Check for application error and redirect to ApplicationErrorPage
+  if (auth.error || user.error) {
+    return <ApplicationErrorPage />;
+  }
+
   if (isLoading) return <Loader />;
 
   const renderHead = () => {
@@ -50,9 +65,14 @@ const MainAppLayout = (props) => {
   };
 
   const renderApp = () => {
+    const isErrorPage =
+      router.pathname === ROUTES.APP_ERROR ||
+      router.pathname === ROUTES.NETWORK_ERROR ||
+      router.pathname === '/404';
+
     return (
       <>
-        <SideMenu />
+        {!isErrorPage && <SideMenu />} {/* Conditionally render the SideMenu */}
         <Grid {...styles.contentGridProps(extraContentProps, isToolPage)}>
           {children}
         </Grid>

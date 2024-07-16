@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import GradientOutlinedButton from '@/components/GradientOutlinedButton';
 import MainAppLayout from '@/layouts/MainAppLayout';
 
+import LargeLogo from '@/assets/svg/MenuLogo.svg';
 import Planet from '@/assets/svg/planet.svg';
 import Star from '@/assets/svg/Star_3.svg';
 import YellowStar from '@/assets/svg/yellowStar.svg';
@@ -23,6 +24,25 @@ const PageNotFound = () => {
 
   const handleRouteToHome = () => {
     router.push(ROUTES.HOME);
+  };
+
+  const renderLogo = () => {
+    return (
+      <Grid
+        onClick={() => router.push(ROUTES.HOME)}
+        {...pageNotFoundStyles.logoGridProps}
+      >
+        <Grid {...pageNotFoundStyles.logoTitleGridProps}>
+          <LargeLogo />
+        </Grid>
+        <Grid {...pageNotFoundStyles.logoTitleGridProps}>
+          <Typography {...pageNotFoundStyles.logoTitleProps}>KAI.AI</Typography>
+          <Typography {...pageNotFoundStyles.logoSubtitleProps}>
+            AI Teaching Assistant
+          </Typography>
+        </Grid>
+      </Grid>
+    );
   };
 
   const renderMainTitle = () => {
@@ -95,12 +115,12 @@ const PageNotFound = () => {
   const renderIcons = () => {
     return (
       <>
-        <Box {...pageNotFoundStyles.yellowStarProps}>
+        {/* <Box {...pageNotFoundStyles.yellowStarProps}>
           <YellowStar />
-        </Box>
-        <Box {...pageNotFoundStyles.planetProps}>
+        </Box> */}
+        {/* <Box {...pageNotFoundStyles.planetProps}>
           <Planet />
-        </Box>
+        </Box> */}
         <Box {...pageNotFoundStyles.star1Props}>
           <Star />
         </Box>
@@ -118,6 +138,7 @@ const PageNotFound = () => {
     <Grid {...pageNotFoundStyles.mainGridProps}>
       {renderRadialBackground()}
       <Grid {...pageNotFoundStyles.contentGridProps}>
+        {renderLogo()}
         {renderIcons()}
         {renderTopContent()}
         {renderBottomContent()}
