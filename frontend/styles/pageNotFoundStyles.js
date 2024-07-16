@@ -1,3 +1,5 @@
+import zIndex from '@mui/material/styles/zIndex';
+
 const pageNotFoundStyles = {
   mainGridProps: {
     position: 'relative',
@@ -178,6 +180,7 @@ const pageNotFoundStyles = {
       background: (theme) => theme.palette.primary.main,
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
+      zIndex: 3,
     },
   },
   submitButtonProps: {
@@ -229,6 +232,41 @@ const pageNotFoundStyles = {
     top: '35%',
     right: '25%',
     width: 42,
+  },
+  meteorProps: {
+    position: 'absolute',
+    top: '36%',
+    right: '46%',
+    zIndex: 5,
+  },
+  meteorDetailsProps: {
+    position: 'absolute',
+    top: '36%',
+    right: '46%',
+    zIndex: 5,
+  },
+  meteorDetails2Props: {
+    position: 'absolute',
+    top: '38%',
+    right: '48%',
+  },
+  meteorTrail1Props: {
+    position: 'absolute',
+    top: '27%',
+    right: '37%',
+    zIndex: 4,
+  },
+  meteorTrail2Props: {
+    position: 'absolute',
+    top: '31%',
+    right: '40%',
+    zIndex: 4,
+  },
+  meteorTrail3Props: {
+    position: 'absolute',
+    top: '34%',
+    right: '43%',
+    zIndex: 4,
   },
 };
 

@@ -5,6 +5,12 @@ import GradientOutlinedButton from '@/components/GradientOutlinedButton';
 import MainAppLayout from '@/layouts/MainAppLayout';
 
 import LargeLogo from '@/assets/svg/MenuLogo.svg';
+import Meteor from '@/assets/svg/Meteor.svg';
+import MeteorDetails from '@/assets/svg/MeteorDetails.svg';
+import MeteorDetails2 from '@/assets/svg/MeteorDetails2.svg';
+import MeteorTrail1 from '@/assets/svg/MeteorTrail1.svg';
+import MeteorTrail2 from '@/assets/svg/MeteorTrail2.svg';
+import MeteorTrail3 from '@/assets/svg/MeteorTrail3.svg';
 import Planet from '@/assets/svg/planet.svg';
 import Star from '@/assets/svg/Star_3.svg';
 import YellowStar from '@/assets/svg/yellowStar.svg';
@@ -121,6 +127,24 @@ const PageNotFound = () => {
         {/* <Box {...pageNotFoundStyles.planetProps}>
           <Planet />
         </Box> */}
+        <Box {...pageNotFoundStyles.meteorProps}>
+          <Meteor />
+        </Box>
+        <Box {...pageNotFoundStyles.meteorDetailsProps}>
+          <MeteorDetails />
+        </Box>
+        <Box {...pageNotFoundStyles.meteorDetails2Props}>
+          <MeteorDetails2 />
+        </Box>
+        <Box {...pageNotFoundStyles.meteorTrail1Props}>
+          <MeteorTrail1 />
+        </Box>
+        <Box {...pageNotFoundStyles.meteorTrail2Props}>
+          <MeteorTrail2 />
+        </Box>
+        <Box {...pageNotFoundStyles.meteorTrail3Props}>
+          <MeteorTrail3 />
+        </Box>
         <Box {...pageNotFoundStyles.star1Props}>
           <Star />
         </Box>
