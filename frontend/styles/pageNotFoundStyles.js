@@ -8,6 +8,7 @@ const pageNotFoundStyles = {
     alignItems: 'center',
     height: '100%',
     overflow: 'hidden',
+    p: 2,
     maxWidth: { laptop: '1450px' },
     sx: {
       borderRadius: '22px',
