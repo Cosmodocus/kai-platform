@@ -14,7 +14,15 @@ import ROUTES from '@/constants/routes';
 
 import pageNotFoundStyles from '@/styles/pageNotFoundStyles';
 
-const ApplicationErrorPage = () => {
+/**
+ * ApplicationError component displays a page indicating application errors.
+ * It provides an option to navigate back to the homepage.
+ *
+ * Uses MainAppLayout as the layout wrapper.
+ *
+ * @returns {JSX.Element} ApplicationErrorPage component UI
+ */
+const ApplicationError = () => {
   const router = useRouter();
   const theme = useTheme();
   const handleRouteToHome = () => {
@@ -54,8 +62,8 @@ const ApplicationErrorPage = () => {
     return (
       <Grid {...pageNotFoundStyles.bodyGridProps}>
         <Typography {...pageNotFoundStyles.bodyProps}>
-          It’s not you it’s us, we’re trying to fix this issue for you Let’s go
-          back to home for the time being!
+          It’s not you it’s us, we’re trying to fix this issue for you <br />
+          Let’s go back to home for the time being!
         </Typography>
       </Grid>
     );
@@ -141,8 +149,8 @@ const ApplicationErrorPage = () => {
   );
 };
 
-ApplicationErrorPage.getLayout = function getLayout(page) {
+ApplicationError.getLayout = function getLayout(page) {
   return <MainAppLayout>{page}</MainAppLayout>;
 };
 
-export default ApplicationErrorPage;
+export default ApplicationError;

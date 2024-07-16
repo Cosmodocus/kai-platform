@@ -16,7 +16,16 @@ import ROUTES from '@/constants/routes';
 
 import pageNotFoundStyles from '@/styles/pageNotFoundStyles';
 
-const NetworkErrorPage = () => {
+/**
+ * NetworkError component displays a page indicating network errors.
+ * It suggests reconnecting and refreshing the page to continue.
+ *
+ * Uses MainAppLayout as the layout wrapper.
+ *
+ * @returns {JSX.Element} NetworkError component UI
+ */
+
+const NetworkError = () => {
   const router = useRouter();
 
   const renderLogo = () => {
@@ -52,8 +61,8 @@ const NetworkErrorPage = () => {
     return (
       <Grid {...pageNotFoundStyles.bodyGridProps}>
         <Typography {...pageNotFoundStyles.bodyProps}>
-          Seems like there is a problem with your internet, try reconnecting and
-          refresh the page to continue
+          Seems like there is a problem with your internet, <br />
+          try reconnecting and refresh the page to continue
         </Typography>
       </Grid>
     );
@@ -125,8 +134,8 @@ const NetworkErrorPage = () => {
   );
 };
 
-NetworkErrorPage.getLayout = function getLayout(page) {
+NetworkError.getLayout = function getLayout(page) {
   return <MainAppLayout>{page}</MainAppLayout>;
 };
 
-export default NetworkErrorPage;
+export default NetworkError;
