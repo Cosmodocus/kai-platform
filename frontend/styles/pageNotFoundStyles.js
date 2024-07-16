@@ -237,7 +237,7 @@ const pageNotFoundStyles = {
     right: '46%',
     zIndex: 5,
   },
-  meteorDetailsProps: {
+  meteorDetails1Props: {
     position: 'absolute',
     top: '36%',
     right: '46%',

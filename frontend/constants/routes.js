@@ -11,7 +11,7 @@ const ROUTES = {
   HISTORY: '/history',
   APP_ERROR: '/app-error',
   NETWORK_ERROR: '/network-error',
-  FOUR_OH_FOUR_ERROR: '/404-error',
+  FOUR_OH_FOUR_ERROR: '/404',
 };
 
 export default ROUTES;

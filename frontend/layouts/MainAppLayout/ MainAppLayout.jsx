@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Grid, useMediaQuery } from '@mui/material';
 import Head from 'next/head';
@@ -19,10 +19,8 @@ import { setLoading } from '@/redux/slices/authSlice';
 const MainAppLayout = (props) => {
   const { children, extraContentProps, isToolPage } = props;
   const dispatch = useDispatch();
-
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
-
   const isTabletScreen = useMediaQuery((theme) =>
     theme.breakpoints.down('laptop')
   );
@@ -33,12 +31,18 @@ const MainAppLayout = (props) => {
     dispatch(setLoading(false));
   }, [dispatch]);
 
+  const renderHead = () => (
+    <Head>
+      <title>Kai AI</title>
+    </Head>
+  );
+
   if (showApplicationError) {
     return <ApplicationError />;
   }
 
   const renderSideMenu = () => {
-    return !isErrorPage && <SideMenu />;
+    return !isErrorPage && isOnline && <SideMenu />;
   };
 
   if (!isOnline) {
@@ -49,19 +53,13 @@ const MainAppLayout = (props) => {
 
   if (isLoading) return <Loader />;
 
-  const renderHead = () => (
-    <Head>
-      <title>Kai AI</title>
-    </Head>
-  );
-
   return (
     <Grid {...styles.mainGridProps}>
       {renderHead()}
       {isTabletScreen && <AppDisabled head={renderHead()} />}
       {!isTabletScreen && (
         <>
-          {renderSideMenu}
+          {renderSideMenu()}
           <Grid {...styles.contentGridProps(extraContentProps, isToolPage)}>
             {children}
           </Grid>

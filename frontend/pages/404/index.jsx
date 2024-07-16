@@ -6,7 +6,7 @@ import MainAppLayout from '@/layouts/MainAppLayout';
 
 import LargeLogo from '@/assets/svg/MenuLogo.svg';
 import Meteor from '@/assets/svg/Meteor.svg';
-import MeteorDetails from '@/assets/svg/MeteorDetails.svg';
+import MeteorDetails1 from '@/assets/svg/MeteorDetails1.svg';
 import MeteorDetails2 from '@/assets/svg/MeteorDetails2.svg';
 import MeteorTrail1 from '@/assets/svg/MeteorTrail1.svg';
 import MeteorTrail2 from '@/assets/svg/MeteorTrail2.svg';
@@ -130,8 +130,8 @@ const PageNotFound = () => {
         <Box {...pageNotFoundStyles.meteorProps}>
           <Meteor />
         </Box>
-        <Box {...pageNotFoundStyles.meteorDetailsProps}>
-          <MeteorDetails />
+        <Box {...pageNotFoundStyles.meteorDetails1Props}>
+          <MeteorDetails1 />
         </Box>
         <Box {...pageNotFoundStyles.meteorDetails2Props}>
           <MeteorDetails2 />
