@@ -251,19 +251,19 @@ const pageNotFoundStyles = {
   },
   meteorTrail1Props: {
     position: 'absolute',
-    top: '27%',
+    top: '28%',
     right: '37%',
     zIndex: 4,
   },
   meteorTrail2Props: {
     position: 'absolute',
-    top: '31%',
+    top: '32%',
     right: '40%',
     zIndex: 4,
   },
   meteorTrail3Props: {
     position: 'absolute',
-    top: '34%',
+    top: '35%',
     right: '43%',
     zIndex: 4,
   },
