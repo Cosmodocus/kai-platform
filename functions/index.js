@@ -17,6 +17,8 @@ const migrationScripts = {};
 module.exports = {
   /* Authenticaition */
   signUpUser: userController.signUpUser,
+  updateEmail:userController.updateEmail,
+  updateName:userController.updateName,
 
   /* Kai AI */
   chat: kaiAIController.chat,
