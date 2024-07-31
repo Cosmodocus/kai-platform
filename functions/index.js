@@ -5,6 +5,7 @@ admin.initializeApp();
 
 const userController = require('./controllers/userController');
 const kaiAIController = require('./controllers/kaiAIController');
+const update = require('./controllers/updateDocument');
 const { seedDatabase } = require('./cloud_db_seed');
 
 seedDatabase();
@@ -17,8 +18,8 @@ const migrationScripts = {};
 module.exports = {
   /* Authenticaition */
   signUpUser: userController.signUpUser,
-  updateEmail:userController.updateEmail,
-  updateName:userController.updateName,
+
+  updateDoc: update.updateDocument,
 
   /* Kai AI */
   chat: kaiAIController.chat,
