@@ -18,6 +18,33 @@ Checks that a password has a minimum of 6 characters, at least 1 uppercase lette
     regex: /^[a-zA-Z0-9. ]+$/,
     message: 'Invalid full name',
   },
+
+  occupation: {
+    required: 'Occupation is required',
+    pattern: {
+      value: /^[a-zA-Z\s]+$/,
+      message: 'Occupation must only contain letters and spaces',
+    },
+    minLength: {
+      value: 3,
+      message: 'Occupation must be at least 3 characters long',
+    },
+  },
+
+  socialMedia: {
+    facebook: {
+      regex: /^https?:\/\/(www\.)?facebook\.com\/[a-zA-Z0-9(.?)?]/,
+      message: 'Invalid Facebook URL',
+    },
+    linkedIn: {
+      regex: /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9(.?)?]/,
+      message: 'Invalid LinkedIn URL',
+    },
+    x: {
+      regex: /^https?:\/\/(www\.)?twitter\.com\/[a-zA-Z0-9_]+$/,
+      message: 'Invalid X URL',
+    },
+  },
 };
 
 const PASSWORD_REGEX = {
