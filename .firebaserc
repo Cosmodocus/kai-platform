@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "kai-ai-f63c8"
+    "default": "marvel--auth"
   },
   "targets": {
-    "kai-ai-f63c8": {
+    "marvel--auth": {
       "hosting": {
         "next": [
-          "kai-ai-f63c8"
+          "marvel--auth"
         ]
       }
     }
